@@ -1,0 +1,22 @@
+{
+  "name": "react",
+  "version": "1.0.0",
+  "description": "Mastering React Js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/venkat8268/react-js.git"
+  },
+  "author": "Venkatesh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/venkat8268/react-js/issues"
+  },
+  "homepage": "https://github.com/venkat8268/react-js#readme",
+  "devDependencies": {
+    "parcel": "^2.15.1"
+  }
+}
