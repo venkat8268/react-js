@@ -16,11 +16,14 @@ const heading2 = <h2 id="heading2" className="heading2">Heading with Jsx</h2>;
 // Functional components
 
 const Title = () => (
-    <h3>Title with Functional component</h3>
+    <h3 style={{ backgroundColor: 'yellow' }}>Title with Functional component</h3>
 );
 
-const Title2 = () => (
-    <h3>Title with Functional component and different declaration</h3>
+const Subtitle = () => (
+    <>
+        <h3>Subtitle with Functional component and different declaration</h3>
+        <h4>Another subtitle</h4>
+    </>
 );
 
 
@@ -28,7 +31,7 @@ const HeadingComponent = () => (
     <div>
         {heading}
         <Title />
-        {Title2()}
+        {Subtitle()}
         <h1>Heading with functional component</h1>
     </div>
 );
