@@ -57,7 +57,7 @@ export const restaurantsList = [
     },
     {
         id: 8,
-        name: "Biryani Junction",
+        name: "The Biryani Junction",
         cuisine: "Biryani, Hyderabadi",
         rating: 4.4,
         location: "Thane, Mumbai",
@@ -73,7 +73,7 @@ export const restaurantsList = [
     },
     {
         id: 10,
-        name: "Chaat Street",
+        name: "The Chaat Street",
         cuisine: "Snacks, Chaat",
         rating: 4.2,
         location: "Vile Parle, Mumbai",
