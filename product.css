@@ -74,3 +74,17 @@ footer {
 .product-description {
     padding: 15px;
 }
+
+.search-container {
+    margin-top: 40px;
+    margin-left: 40px;
+}
+
+.search-container input {
+    height: 30px;
+    width: 250px;
+}
+
+.search-button {
+    margin-left: 20px;
+} 
