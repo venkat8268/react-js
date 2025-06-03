@@ -16,8 +16,7 @@ const Body = () => {
       <div className="products">
         {restaurants.map((restaurant) => (
           <Product
-            restaurant={restaurant}
-            name={restaurant.name}
+            {...restaurant}
             key={restaurant.id}
           />
         ))}

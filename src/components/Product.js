@@ -1,7 +1,5 @@
 
-const Product = ({restaurant}) => {
-
-    const {name, cuisine, location, rating, image} = restaurant;    
+const Product = ({name, cuisine, location, rating, image}) => {
     
     return (
         <div className="product">
