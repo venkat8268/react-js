@@ -3,7 +3,7 @@ import Search from "./Search";
 import { restaurantsList } from "./constants";
 import { useState } from "react";
 
-const Body = () => {
+const Body = () => { 
   const [restaurants, setRestaurants] = useState(restaurantsList);
 
   function handleFilteredRestaurants(restaurantsFromSearch) {
