@@ -6,7 +6,7 @@ const Search = ({ sendFilteredRestaurant }) => {
 
   function filterRestaurants(searchText, restaurants) {
     return restaurants.filter((restaurant) =>
-      restaurant.name.toLowerCase().includes(searchText.toLowerCase())
+      restaurant.info.name.toLowerCase().includes(searchText.toLowerCase())
     );
   }
 

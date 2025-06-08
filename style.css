@@ -19,3 +19,9 @@
     object-fit: cover;
     border-radius: 5px;
 }
+
+.trim-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
