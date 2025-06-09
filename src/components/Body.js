@@ -7,7 +7,7 @@ import ProductShimmer from "./ProductShimmer";
 const Body = () => {
     const [restaurants, setRestaurants] = useState([]);
     const [filteredRestaurants, setFilteredRestaurants] = useState([]);
-    
+
 
     function handleFilteredRestaurants(restaurantsFromSearch) {
         setFilteredRestaurants(restaurantsFromSearch);
@@ -22,8 +22,8 @@ const Body = () => {
                 return response.json();
             })
             .then(data => {
-                setRestaurants(data.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
-                setFilteredRestaurants(data.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
+                setRestaurants(data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+                setFilteredRestaurants(data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
             })
             .catch(error => {
                 console.log('There was a problem with the fetch operation:', error);
