@@ -6,13 +6,15 @@ import ProductShimmer from "./ProductShimmer";
 
 const Body = () => {
     const [restaurants, setRestaurants] = useState([]);
+    const [filteredRestaurants, setFilteredRestaurants] = useState([]);
+    
 
     function handleFilteredRestaurants(restaurantsFromSearch) {
-        setRestaurants(restaurantsFromSearch);
+        setFilteredRestaurants(restaurantsFromSearch);
     }
 
     useEffect(() => {
-        const swiggyRestaurants = fetch(RESTURANT_API_URL)
+        fetch(RESTURANT_API_URL)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
@@ -21,6 +23,7 @@ const Body = () => {
             })
             .then(data => {
                 setRestaurants(data.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
+                setFilteredRestaurants(data.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
             })
             .catch(error => {
                 console.log('There was a problem with the fetch operation:', error);
@@ -34,9 +37,10 @@ const Body = () => {
     : 
     (
         <>
-            <Search sendFilteredRestaurant={handleFilteredRestaurants} />
+            <Search sendFilteredRestaurant={handleFilteredRestaurants} allRestaurants={restaurants}/>
             <div className="products">
-                {restaurants.map((restaurant) => (
+                {console.log(filteredRestaurants)}
+                {filteredRestaurants.map((restaurant) => (
                     <Product
                         restaurant={restaurant}
                         key={restaurant.info.id}

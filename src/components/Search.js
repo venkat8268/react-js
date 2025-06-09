@@ -1,7 +1,7 @@
-import { restaurantsList } from "./constants";
 import { useState } from "react";
 
-const Search = ({ sendFilteredRestaurant }) => {
+const Search = ({ sendFilteredRestaurant, allRestaurants  }) => {
+  
   const [searchText, setSearchText] = useState('');
 
   function filterRestaurants(searchText, restaurants) {
@@ -11,7 +11,8 @@ const Search = ({ sendFilteredRestaurant }) => {
   }
 
   function handleSearch() {
-    const filtered = filterRestaurants(searchText, restaurantsList);
+    const filtered = filterRestaurants(searchText, allRestaurants);
+    
     sendFilteredRestaurant(filtered); // send to parent
   }
 
