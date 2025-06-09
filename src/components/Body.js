@@ -31,24 +31,28 @@ const Body = () => {
 
     }, []);
 
-    return (restaurants.length === 0) 
-    ? 
-        <ProductShimmer /> 
-    : 
-    (
+    if (restaurants.length === 0) {
+        return <ProductShimmer />;
+    }
+
+    return (
         <>
-            <Search sendFilteredRestaurant={handleFilteredRestaurants} allRestaurants={restaurants}/>
+            <Search sendFilteredRestaurant={handleFilteredRestaurants} allRestaurants={restaurants} />
             <div className="products">
-                {console.log(filteredRestaurants)}
-                {filteredRestaurants.map((restaurant) => (
-                    <Product
-                        restaurant={restaurant}
-                        key={restaurant.info.id}
-                    />
-                ))}
+                {filteredRestaurants.length === 0 ? (
+                    <div>No products</div>
+                ) : (
+                    filteredRestaurants.map((restaurant) => (
+                        <Product
+                            restaurant={restaurant}
+                            key={restaurant.info.id}
+                        />
+                    ))
+                )}
             </div>
         </>
     );
+
 };
 
 export default Body;
