@@ -5,7 +5,8 @@ import Body from "./components/Body";
 import Footer from "./components/Footer";
 import About from "./components/About";
 import Error from "./components/Error";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Restaurant from "./components/Restaurant";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 // Create a Headers, Body, Footer component and import it here
 
@@ -13,7 +14,7 @@ const Root = () => {
     return (
         <>
             <Header />
-            <Body />
+            <Outlet />
             <Footer />
         </>
     );
@@ -23,12 +24,23 @@ const router = createBrowserRouter([
     {
         path: "/",
         element: <Root />,
-        errorElement: <Error />
+        errorElement: <Error />,
+        children: [
+            {
+                path: "/",
+                element: <Body />,
+            },
+            {
+                path: "/about",
+                element: <About />,
+            },
+            {
+                path: "/restaurant/:id",
+                element: <Restaurant />,
+            }
+        ]
     },
-    {
-        path: "/about",
-        element: <About />,
-    }
+
 ])
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

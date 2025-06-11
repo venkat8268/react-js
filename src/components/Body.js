@@ -3,6 +3,7 @@ import Search from "./Search";
 import { restaurantsList, RESTURANT_API_URL } from "./constants";
 import { useState, useEffect } from "react";
 import ProductShimmer from "./ProductShimmer";
+import { Link } from "react-router-dom";
 
 const Body = () => {
     const [restaurants, setRestaurants] = useState([]);
@@ -43,10 +44,11 @@ const Body = () => {
                     <div>No products</div>
                 ) : (
                     filteredRestaurants.map((restaurant) => (
-                        <Product
-                            restaurant={restaurant}
-                            key={restaurant.info.id}
-                        />
+                        <Link key={restaurant.info.id} to={"/restaurant/"+restaurant.info.id}>
+                            <Product
+                                restaurant={restaurant}
+                            />
+                        </Link>
                     ))
                 )}
             </div>
