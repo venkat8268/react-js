@@ -42,7 +42,8 @@ footer {
     color: white;
 }
 
-.products, .product-shimmer {
+.products,
+.product-shimmer {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 1fr 1fr;
@@ -93,23 +94,63 @@ footer {
     margin-top: 80px;
 }
 
-.product-shimmer > .product {
+.product-shimmer>.product {
     border: unset;
     background-color: rgb(135, 135, 135);
 }
 
 .animate {
-  animation: shimmer 3s;
-  animation-iteration-count: infinite;
-  background: linear-gradient(to right, #e6e6e6 5%, #cccccc 25%, #e6e6e6 35%);
-  background-size: 1000px 100%;
+    animation: shimmer 3s;
+    animation-iteration-count: infinite;
+    background: linear-gradient(to right, #e6e6e6 5%, #cccccc 25%, #e6e6e6 35%);
+    background-size: 1000px 100%;
 }
 
 @keyframes shimmer {
-  from {
-    background-position: -1000px 0;
-  }
-  to {
-    background-position: 1000px 0;
-  }
+    from {
+        background-position: -1000px 0;
+    }
+
+    to {
+        background-position: 1000px 0;
+    }
+}
+
+.restaurant {
+    margin: 30px;
+}
+
+.restaurant-hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 60vw;
+    margin: auto;
+}
+
+.restaurant-hero>img {
+    /* margin-right: 100px; */
+    width: 400px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.dot {
+    margin: 0px 8px;
+    color: gray;
+}
+
+.restaurant-rating {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: -0.4px;
+}
+
+.restaurant-cuisines {
+    margin-top: 4px;
+    font-weight: 600;
+    font-size: 16px;
+    color: rgb(255, 82, 0);
 }
