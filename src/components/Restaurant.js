@@ -42,7 +42,7 @@ const Restaurant = () => {
                 </div>
             </div>
             <div>
-                {restaurantMenu.map((restaurant) => {
+                {restaurantMenu?.map((restaurant) => {
                     console.log(restaurant.card.info);
                     return <Menu key={restaurant.card.info.id} {...restaurant.card.info} />
                 })}
