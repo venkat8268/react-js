@@ -6,8 +6,8 @@ import Menu from "./Menu";
 const Restaurant = () => {
 
     const [restaurant, setRestaurant] = useState([]);
-    const [restaurantMenu, setRestaurantMenu] = useState([]);    
-    
+    const [restaurantMenu, setRestaurantMenu] = useState([]);
+
     useEffect(() => {
         getRestaurant();
     }, [])
@@ -16,21 +16,21 @@ const Restaurant = () => {
 
     async function getRestaurant() {
         try {
-            const response = await fetch('https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=21.99740&lng=79.00110&restaurantId='+id)
+            const response = await fetch('https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=21.99740&lng=79.00110&restaurantId=' + id)
             const restaurant = await response.json();
             setRestaurant(restaurant?.data?.cards[2]?.card?.card?.info);
-            setRestaurantMenu(restaurant?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[3]?.card?.card?.itemCards);
+            setRestaurantMenu(restaurant?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards);            
             
-        } catch(e) {
+        } catch (e) {
             console.log(e);
-            
+
         }
     }
 
     return (restaurant.length === 0) ? <RestaurantShimmer /> : (
         <div className="restaurant">
             <div className="restaurant-hero">
-                <img src={'https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/'+restaurant.cloudinaryImageId} />
+                <img src={'https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/' + restaurant.cloudinaryImageId} />
                 <div>
                     <h1>{restaurant.name}</h1>
                     <div className="restaurant-rating">
@@ -42,9 +42,8 @@ const Restaurant = () => {
                 </div>
             </div>
             <div>
-                {restaurantMenu?.map((restaurant) => {
-                    console.log(restaurant.card.info);
-                    return <Menu key={restaurant.card.info.id} {...restaurant.card.info} />
+                {restaurantMenu?.map((menu, index) => {                    
+                    return <Menu key={index} menu={menu} />
                 })}
             </div>
         </div>

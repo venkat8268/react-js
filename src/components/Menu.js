@@ -1,8 +1,10 @@
-const Menu = ({name}) => {
+const Menu = (menu) => {
+    
+    console.log(menu);
     
     return (
         <>
-            <div>{name}</div>
+           {}
         </>
     )
 }
