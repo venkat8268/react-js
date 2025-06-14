@@ -1,6 +1,6 @@
-const Menu = (menu) => {
+const Menu = (itemCards) => {
     
-    console.log(menu);
+    console.log(itemCards);
     
     return (
         <>
