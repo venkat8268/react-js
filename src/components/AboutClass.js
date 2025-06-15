@@ -21,10 +21,18 @@ class About extends React.Component {
         this.setState({
             userInfo: user
         })
+
+        this.timer = setInterval(() => {
+            console.log('Logging every second');
+        }, 1000)
     }
 
     componentDidUpdate() {
         console.log('componentDidUpdate');
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.timer);
     }
 
     render() {

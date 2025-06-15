@@ -10,6 +10,14 @@ const Restaurant = () => {
 
     useEffect(() => {
         getRestaurant();
+
+        const timer = setInterval(() => {
+            console.log('logging every second inside restaurant');
+        }, 1000)
+
+        return () => {
+            clearInterval(timer);
+        }
     }, [])
 
     const { id } = useParams();
