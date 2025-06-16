@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { RestaurantShimmer } from "./RestaurantShimmer";
 import Menu from "./Menu";
+import { RESTURANT_MENU_API_URL_WITH_ID } from "./constants";
 
 const Restaurant = () => {
 
@@ -24,7 +25,9 @@ const Restaurant = () => {
 
     async function getRestaurant() {
         try {
-            const response = await fetch('https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=21.99740&lng=79.00110&restaurantId=' + id)
+            // getting the restaurant constant from the constants.js file by usung RESTURANT_MENU_API_URL_WITH_ID function
+
+            const response = await fetch(RESTURANT_MENU_API_URL_WITH_ID(id))
             const restaurant = await response.json();
             setRestaurant(restaurant?.data?.cards[2]?.card?.card?.info);
             setRestaurantMenu(restaurant?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards);            
