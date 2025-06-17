@@ -1,6 +1,11 @@
-import { Link } from "react-router-dom" 
+import { Link } from "react-router-dom"
+import useOnlineStatus from "./hooks/useOnlineStatus"
 
 const Header = () => {
+    const isOnline = useOnlineStatus();
+    console.log(isOnline);
+    
+    
     return (
         <header className="site-header">
             <div className="site-identity">
@@ -9,8 +14,9 @@ const Header = () => {
             <nav className="site-navigation">
                 <ul className="nav">
                     <li><Link to="/about">About</Link></li>
-                    <li><a href="#">News</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><Link to="/news">News</Link></li>
+                    <li><Link to="/contact">Contact</Link></li>
+                    <li>User status : {isOnline ? "🟢" : "🔴"}</li>
                 </ul>
             </nav>
         </header>
