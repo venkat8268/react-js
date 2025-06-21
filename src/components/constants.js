@@ -154,3 +154,5 @@ export const restaurantsList = [
 export const RESTURANT_API_URL = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.517929&lng=88.38341199999999&page_type=DESKTOP_WEB_LISTING";
 
 export const RESTURANT_MENU_API_URL_WITH_ID = (id) => `https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=22.517929&lng=88.38341199999999&restaurantId=${id}`;
+
+export const CLOUDINARY_IMAGE_URL = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { RestaurantShimmer } from "./RestaurantShimmer";
 import Menu from "./Menu";
-import { RESTURANT_MENU_API_URL_WITH_ID } from "./constants";
+import { RESTURANT_MENU_API_URL_WITH_ID, CLOUDINARY_IMAGE_URL } from "./constants";
 
 const Restaurant = () => {
 
@@ -13,8 +13,8 @@ const Restaurant = () => {
         getRestaurant();
 
         const timer = setInterval(() => {
-            console.log('logging every second inside restaurant');
-        }, 1000)
+            console.log('logging every 100000 ms inside restaurant');
+        }, 100000)
 
         return () => {
             clearInterval(timer);
@@ -30,7 +30,9 @@ const Restaurant = () => {
             const response = await fetch(RESTURANT_MENU_API_URL_WITH_ID(id))
             const restaurant = await response.json();
             setRestaurant(restaurant?.data?.cards[2]?.card?.card?.info);
-            setRestaurantMenu(restaurant?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards);            
+
+            const restaurantData = restaurant?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards; 
+            setRestaurantMenu(restaurantData.filter((menu) => menu?.card?.card?.["@type"] == "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"))
             
         } catch (e) {
             console.log(e);
@@ -41,9 +43,9 @@ const Restaurant = () => {
     return (restaurant.length === 0) ? <RestaurantShimmer /> : (
         <div className="restaurant">
             <div className="restaurant-hero">
-                <img src={'https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/' + restaurant.cloudinaryImageId} />
+                <img src={CLOUDINARY_IMAGE_URL + restaurant.cloudinaryImageId} className="w-30 h-20 object-cover rounded-xl me-4"/>
                 <div>
-                    <h1>{restaurant.name}</h1>
+                    <h1 className="text-2xl font-bold">{restaurant.name}</h1>
                     <div className="restaurant-rating">
                         <span>{restaurant.avgRating} stars ({restaurant.totalRatingsString})</span>
                         <span className="dot">•</span>
@@ -52,9 +54,9 @@ const Restaurant = () => {
                     <div className="restaurant-cuisines">{restaurant.cuisines.join(', ')}</div>
                 </div>
             </div>
-            <div>
+            <div className="pt-8">
                 {restaurantMenu?.map((menu, index) => {                    
-                    return <Menu key={index} menu={menu} />
+                    return <Menu key={index} {...menu.card.card} />
                 })}
             </div>
         </div>

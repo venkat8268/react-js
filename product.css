@@ -123,17 +123,9 @@ footer {
 .restaurant-hero {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
     width: 60vw;
     margin: auto;
-}
-
-.restaurant-hero>img {
-    /* margin-right: 100px; */
-    width: 400px;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 10px;
 }
 
 .dot {

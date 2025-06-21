@@ -15,13 +15,6 @@
     margin-top: 20px;
 }
 
-.restaurants > img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 5px;
-}
-
 .trim-text {
     white-space: nowrap;
     overflow: hidden;
