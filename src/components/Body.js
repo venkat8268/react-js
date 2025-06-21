@@ -1,4 +1,4 @@
-import Product from "./Product";
+import Product, {isVeg} from "./Product";
 import Search from "./Search";
 import { restaurantsList, RESTURANT_API_URL } from "./constants";
 import { useState, useEffect } from "react";
@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 const Body = () => {
     const [restaurants, setRestaurants] = useState([]);
     const [filteredRestaurants, setFilteredRestaurants] = useState([]);
+    const IsVeg = isVeg(Product)
 
 
     function handleFilteredRestaurants(restaurantsFromSearch) {
@@ -45,9 +46,8 @@ const Body = () => {
                 ) : (
                     filteredRestaurants.map((restaurant) => (
                         <Link key={restaurant.info.id} to={"/restaurant/"+restaurant.info.id}>
-                            <Product
-                                restaurant={restaurant}
-                            />
+                            {/* if veg show green symbol else normal */}
+                            {restaurant.info.veg ? <IsVeg restaurant={restaurant}/> : <Product restaurant={restaurant}/>}
                         </Link>
                     ))
                 )}

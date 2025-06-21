@@ -20,11 +20,11 @@ const Search = ({ sendFilteredRestaurant, allRestaurants  }) => {
     <div className="search-container">
       <input
         type="text"
-        className="search-product"
+        className="search-product border border-2 rounded"
         value={searchText}
         onChange={(e) => setSearchText(e.target.value)}
       />
-      <button className="search-button" onClick={handleSearch}>
+      <button className="search-button cursor-pointer bg-green-300 text-black py-1.5 px-4 border-green-500 rounded border-2" onClick={handleSearch}>
         Search
       </button>
     </div>
