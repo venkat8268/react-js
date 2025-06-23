@@ -1,13 +1,7 @@
 import MenuItems from './MenuItems';
 import {useState} from "react";
 
-const Menu = ({ title, itemCards }) => {
-
-    const [accordion, setAccordion] = useState(false);
-
-    function toggleAccordion() {
-        setAccordion(!accordion);
-    }
+const Menu = ({ title, itemCards, accordion, toggleAccordion }) => {
 
     return (
         <div className="w-6/12 m-auto my-2.5 p-4 rounded">
