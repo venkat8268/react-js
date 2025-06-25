@@ -57,7 +57,7 @@ const Restaurant = () => {
             </div>
             <div className="pt-8">
                 {restaurantMenu?.map((menu, index) => {                    
-                    return <Menu key={index} {...menu.card.card} accordion={index == toggleAccordion ? true : false} toggleAccordion={() => setToggleAccordion(index)} />
+                    return <Menu key={index} {...menu.card.card}  accordion={index == toggleAccordion ? true : false} toggleAccordion={() => setToggleAccordion(index)} />
                 })}
             </div>
         </div>
