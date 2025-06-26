@@ -6,7 +6,6 @@ import UserContext from "./UserContext";
 const Header = () => {
     const isOnline = useOnlineStatus();
     const userData = useContext(UserContext);
-    console.log(userData);
         
     return (
         <header className="site-header">

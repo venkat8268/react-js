@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useContext, useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -7,6 +7,8 @@ import Footer from "./components/Footer";
 import Error from "./components/Error";
 import Restaurant from "./components/Restaurant";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import UserContext from "./components/UserContext";
+import UserContext from "./components/UserContext";
 
 // Dynamic importing 
 const About = lazy(() => import('./components/AboutClass'))
@@ -14,11 +16,24 @@ const About = lazy(() => import('./components/AboutClass'))
 // Create a Headers, Body, Footer component and import it here
 
 const Root = () => {
+
+    const [userName, setUserName] = useState("");
+    
+    const user = useContext(UserContext);
+    
+    useEffect(() => {        
+        if (user.loggedInUser) {
+            setUserName(user.loggedInUser);
+        }
+    }, [])
+    
     return (
         <>
-            <Header />
-            <Outlet />
-            <Footer />
+            <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
+                <Header />
+                <Outlet />
+                <Footer />
+            </UserContext.Provider>
         </>
     );
 };

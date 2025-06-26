@@ -1,8 +1,11 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import UserContext from "./UserContext";
 
 const Search = ({ sendFilteredRestaurant, allRestaurants  }) => {
   
   const [searchText, setSearchText] = useState('');
+  const {loggedInUser, setUserName} = useContext(UserContext)
+  
 
   function filterRestaurants(searchText, restaurants) {
     return restaurants.filter((restaurant) =>
@@ -27,6 +30,14 @@ const Search = ({ sendFilteredRestaurant, allRestaurants  }) => {
       <button className="search-button cursor-pointer bg-green-300 text-black py-1.5 px-4 border-green-500 rounded border-2" onClick={handleSearch}>
         Search
       </button>
+
+      <label className="ms-6 font-bold"> User Name</label>
+      <input
+        type="text"
+        className="search-product border rounded ms-2"
+        value={loggedInUser}    
+        onChange={(e) => setUserName(e.target.value)}
+      />
     </div>
   );
 };
