@@ -1,4 +1,5 @@
 import React from "react";
+import UserContext from "./UserContext";
 
 class About extends React.Component {
 
@@ -23,8 +24,8 @@ class About extends React.Component {
         })
 
         this.timer = setInterval(() => {
-            console.log('Logging every second');
-        }, 1000)
+            console.log('Logging every 10000000 ms');
+        }, 10000000)
     }
 
     componentDidUpdate() {
@@ -43,7 +44,13 @@ class About extends React.Component {
             <div>
                 <div>
                     <h1>About The Developer</h1>
-                    <h2>Developer : {this.props.name}</h2>
+                    <h2>Developer : 
+                        <UserContext.Consumer>
+                            {(data) => {                                
+                                return <span className="font-bold"> {data.loggedInUser}</span>
+                            }}
+                        </UserContext.Consumer>
+                    </h2>
                     <h2>Age : {this.state.age}</h2>
                     <button
                         onClick={
