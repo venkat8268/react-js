@@ -8,7 +8,6 @@ import Error from "./components/Error";
 import Restaurant from "./components/Restaurant";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import UserContext from "./components/UserContext";
-import UserContext from "./components/UserContext";
 
 // Dynamic importing 
 const About = lazy(() => import('./components/AboutClass'))
