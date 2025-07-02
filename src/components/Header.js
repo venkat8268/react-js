@@ -9,6 +9,8 @@ const Header = () => {
     const userData = useContext(UserContext);
 
     const cartItems = useSelector((store) => store.cart);
+    console.log(cartItems);
+    
         
     return (
         <header className="site-header">
