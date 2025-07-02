@@ -8,6 +8,8 @@ import Error from "./components/Error";
 import Restaurant from "./components/Restaurant";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import UserContext from "./components/UserContext";
+import { Provider } from "react-redux";
+import appStore from "./components/utils/appStore";
 
 // Dynamic importing 
 const About = lazy(() => import('./components/AboutClass'))
@@ -28,11 +30,13 @@ const Root = () => {
     
     return (
         <>
-            <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
-                <Header />
-                <Outlet />
-                <Footer />
-            </UserContext.Provider>
+            <Provider store={appStore} >
+                <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
+                    <Header />
+                    <Outlet />
+                    <Footer />
+                </UserContext.Provider>
+            </Provider>
         </>
     );
 };
