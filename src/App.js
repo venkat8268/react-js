@@ -19,6 +19,8 @@ const About = lazy(() => import('./components/AboutClass'))
 
 const Root = () => {
 
+    // https://startling-cendol-e20a64.netlify.app/
+    
     const [userName, setUserName] = useState("");
     
     const user = useContext(UserContext);
