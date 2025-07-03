@@ -1,13 +1,14 @@
 import { CLOUDINARY_IMAGE_URL } from "./constants"
 import { useDispatch } from "react-redux"
-import { addItem } from "../components/utils/cartSlice"
+import { addItem, clearCart } from "../components/utils/cartSlice"
 
-const MenuItems = ({ name, price, description,imageId, defaultPrice }) => {
-
+const MenuItems = (item) => {
+        
+    const { name, price, description,imageId, defaultPrice } = item;
     const dispatch = useDispatch();
     
-    const handleCart = (itemName) => {
-        dispatch(addItem(itemName));
+    const handleCart = (item) => {        
+        dispatch(addItem(item));
     }
 
     return (
@@ -18,11 +19,31 @@ const MenuItems = ({ name, price, description,imageId, defaultPrice }) => {
                 <div className="mt-3 text-xs">{description}</div>
             </div>
             <div className="w-3/12 relative">
-                <button className="absolute top-6 right-6 bg-blue-200 px-2 py-1 font-bold rounded cursor-pointer"  onClick={() => handleCart(name)}>Add</button>
+                <button className="absolute top-6 right-6 bg-black text-white px-2 py-1 font-bold rounded cursor-pointer"  onClick={() => handleCart(item)}>Add</button>
                 <img src={CLOUDINARY_IMAGE_URL+imageId} className="h-auto p-4 rounded-2xl"/>
             </div>
         </div>
     )
+}
+
+export const removeItemFromCart = (MenuItems) => {
+    return ({item}) => {
+        
+        const dispatch = useDispatch();
+        
+        const handleClearCart = () => {
+            dispatch(clearCart())
+        }
+
+        return (
+            <>
+                <div className="relative">
+                    <div className="absolute bottom-2 left-2 z-10 cursor-pointer" onClick={() => handleClearCart()}>❌</div>
+                    <MenuItems {...item} />
+                </div>
+            </>
+        )
+    }
 }
 
 export default MenuItems

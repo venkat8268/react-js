@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 // import About from "./components/AboutClass";
 import Error from "./components/Error";
 import Restaurant from "./components/Restaurant";
+import Cart from "./components/Cart";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import UserContext from "./components/UserContext";
 import { Provider } from "react-redux";
@@ -62,6 +63,10 @@ const router = createBrowserRouter([
             {
                 path: "/restaurant/:id",
                 element: <Restaurant />,
+            },
+            {
+                path: "/cart",
+                element: <Cart />
             }
         ]
     },

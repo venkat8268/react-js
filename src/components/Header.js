@@ -8,9 +8,7 @@ const Header = () => {
     const isOnline = useOnlineStatus();
     const userData = useContext(UserContext);
 
-    const cartItems = useSelector((store) => store.cart);
-    console.log(cartItems);
-    
+    const cartItems = useSelector((store) => store.cart.items);    
         
     return (
         <header className="site-header">
@@ -19,10 +17,9 @@ const Header = () => {
             </div>
             <nav className="site-navigation">
                 <ul className="nav">
-                    <li><Link to="/about">About</Link></li>
-                    <li><Link to="/news">News</Link></li>
-                    <li><Link to="/contact">Contact</Link></li>
-                    <li className="font-bold">Cart ({cartItems.items.length} items)</li>
+                    {/* <li><Link to="/about">About</Link></li> */}
+                    <li><Link to="/">Home</Link></li>
+                    <li className="font-bold"><Link to="/cart">Cart ({cartItems.length} items)</Link></li>
                     <li>User status : {isOnline ? "🟢" : "🔴"}</li>
                     <li className={`font-extrabold ${isOnline ? `text-green-600` : `text-red-600`}`}>{ userData.loggedInUser }</li>
                 </ul>
