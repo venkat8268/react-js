@@ -19,6 +19,7 @@ const Header = () => {
                 <ul className="nav">
                     {/* <li><Link to="/about">About</Link></li> */}
                     <li><Link to="/">Home</Link></li>
+                    <li><Link to="/contact">Contact</Link></li>
                     <li className="font-bold"><Link to="/cart">Cart ({cartItems.length} items)</Link></li>
                     <li>User status : {isOnline ? "🟢" : "🔴"}</li>
                     <li className={`font-extrabold ${isOnline ? `text-green-600` : `text-red-600`}`}>{ userData.loggedInUser }</li>

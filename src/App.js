@@ -11,6 +11,7 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import UserContext from "./components/UserContext";
 import { Provider } from "react-redux";
 import appStore from "./components/utils/appStore";
+import Contact from "./components/Contact";
 
 // Dynamic importing 
 const About = lazy(() => import('./components/AboutClass'))
@@ -69,6 +70,10 @@ const router = createBrowserRouter([
             {
                 path: "/cart",
                 element: <Cart />
+            },
+            {
+                path: "/contact",
+                element: <Contact />
             }
         ]
     },
