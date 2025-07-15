@@ -32,7 +32,6 @@ it("Should contain a submit button", () => {
     render(<Contact />);
 
     const button = screen.findAllByRole("button");
-    console.log(button);
     
     expect(button).toBeTruthy()
 })
