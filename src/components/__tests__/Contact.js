@@ -27,3 +27,12 @@ it("Should contain a place holder named name", () => {
 
     expect(placeholder).toBeTruthy()
 })
+
+it("Should contain a submit button", () => {
+    render(<Contact />);
+
+    const button = screen.findAllByRole("button");
+    console.log(button);
+    
+    expect(button).toBeTruthy()
+})
