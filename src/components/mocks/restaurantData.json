@@ -1,0 +1,87 @@
+{
+    "info": {
+        "id": "576275",
+        "name": "NIC Ice Creams",
+        "cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2025/7/8/0d2f4ce3-b96d-45bb-a190-3800986109a8_576275.JPG",
+        "locality": "Ravindra Pally",
+        "areaName": "Raj Danga Main Road",
+        "costForTwo": "₹120 for two",
+        "cuisines": [
+            "Ice Cream",
+            "Desserts"
+        ],
+        "avgRating": 4.8,
+        "veg": true,
+        "parentId": "6249",
+        "avgRatingString": "4.8",
+        "totalRatingsString": "3.8K+",
+        "sla": {
+            "deliveryTime": 22,
+            "lastMileTravel": 1.9,
+            "serviceability": "SERVICEABLE",
+            "slaString": "20-25 mins",
+            "lastMileTravelString": "1.9 km",
+            "iconType": "ICON_TYPE_EMPTY"
+        },
+        "availability": {
+            "nextCloseTime": "2025-07-16 23:00:00",
+            "opened": true
+        },
+        "badges": {
+            "textExtendedBadges": [
+                {
+                    "iconId": "guiltfree/GF_Logo_android_3x",
+                    "shortDescription": "brand",
+                    "fontColor": "#7E808C"
+                }
+            ]
+        },
+        "isOpen": true,
+        "type": "F",
+        "badgesV2": {
+            "entityBadges": {
+                "imageBased": {},
+                "textBased": {},
+                "textExtendedBadges": {
+                    "badgeObject": [
+                        {
+                            "attributes": {
+                                "description": "",
+                                "fontColor": "#7E808C",
+                                "iconId": "guiltfree/GF_Logo_android_3x",
+                                "shortDescription": "brand"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "aggregatedDiscountInfoV3": {
+            "header": "ITEMS",
+            "subHeader": "AT ₹124"
+        },
+        "differentiatedUi": {
+            "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+            "differentiatedUiMediaDetails": {
+                "lottie": {},
+                "video": {}
+            }
+        },
+        "reviewsSummary": {},
+        "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+        "restaurantOfferPresentationInfo": {},
+        "externalRatings": {
+            "aggregatedRating": {
+                "rating": "--"
+            }
+        },
+        "ratingsDisplayPreference": "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
+    },
+    "analytics": {
+        "context": "seo-data-289fb3fa-5bf8-41ac-8d74-3f698ac526da"
+    },
+    "cta": {
+        "link": "https://www.swiggy.com/city/kolkata/nic-ice-creams-ravindra-pally-raj-danga-main-road-rest576275",
+        "type": "WEBLINK"
+    }
+}

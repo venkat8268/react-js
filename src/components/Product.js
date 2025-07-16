@@ -24,7 +24,7 @@ export const isVeg = (Product) => {
         
         return (
             <div className="relative">
-                <div className="absolute top-3 left-3 bg-white border-2 border-green-400 rounded">🟢</div>
+                <div className="absolute top-3 left-3 bg-white border-2 border-green-400 rounded is-veg">🟢</div>
                 <Product restaurant={restaurant}/>
             </div>
         )
