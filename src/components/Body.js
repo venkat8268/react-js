@@ -46,7 +46,6 @@ const Body = () => {
                 ) : (
                     filteredRestaurants.map((restaurant) => (
                         <Link key={restaurant.info.id} to={"/restaurant/"+restaurant.info.id}>
-                            {console.log(restaurant)}
                             {/* if veg show green symbol else normal */}
                             {restaurant.info.veg ? <IsVeg restaurant={restaurant}/> : <Product restaurant={restaurant}/>}
                         </Link>

@@ -25,9 +25,10 @@ const Search = ({ sendFilteredRestaurant, allRestaurants  }) => {
         type="text"
         className="search-product border border-2 rounded"
         value={searchText}
+        data-testid="searchContainer"
         onChange={(e) => setSearchText(e.target.value)}
       />
-      <button className="search-button cursor-pointer bg-green-300 text-black py-1.5 px-4 border-green-500 rounded border-2" onClick={handleSearch}>
+      <button data-testid="searchButton" className="search-button cursor-pointer bg-green-300 text-black py-1.5 px-4 border-green-500 rounded border-2" onClick={handleSearch}>
         Search
       </button>
 

@@ -3,7 +3,7 @@ import { CLOUDINARY_IMAGE_URL } from "./constants";
 const Product = ({restaurant}) => {
     
     return (
-        <div className="product">
+        <div className="product" data-testid="restaurantCards">
             <div className="image-container">
                 <img src={CLOUDINARY_IMAGE_URL+restaurant.info.cloudinaryImageId} />
             </div>
@@ -24,7 +24,7 @@ export const isVeg = (Product) => {
         
         return (
             <div className="relative">
-                <div className="absolute top-3 left-3 bg-white border-2 border-green-400 rounded is-veg">🟢</div>
+                <div data-testid="vegRestaurants" className="absolute top-3 left-3 bg-white border-2 border-green-400 rounded is-veg">🟢</div>
                 <Product restaurant={restaurant}/>
             </div>
         )
