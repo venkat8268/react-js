@@ -42,7 +42,7 @@ const Restaurant = () => {
     }
 
     return (restaurant.length === 0) ? <RestaurantShimmer /> : (
-        <div className="restaurant">
+        <div className="restaurant" data-testid="restaurantView">
             <div className="restaurant-hero">
                 <img src={CLOUDINARY_IMAGE_URL + restaurant.cloudinaryImageId} className="w-30 h-20 object-cover rounded-xl me-4"/>
                 <div>
